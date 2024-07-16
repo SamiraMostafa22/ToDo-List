@@ -1,0 +1,67 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col">
+        <div
+          class="card"
+          style="border-radius: .75rem; background-color: #eff1f2;"
+        >
+          <div class="card-body py-4 px-4 px-md-5">
+            <h1 class="text-center mb-4 text-primary">Add New Task</h1>
+
+            <!-- Task Form -->
+            <form (submit)="saveTask(taskName, taskDescription, taskDate)">
+              <div class="mb-3">
+                <label for="taskName" class="form-label">Task Name</label>
+                <input
+                  #taskName
+                  type="text"
+                  class="form-control"
+                  id="taskName"
+                  name="taskName"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="taskDescription" class="form-label"
+                  >Description</label
+                >
+                <textarea
+                  #taskDescription
+                  class="form-control"
+                  id="taskDescription"
+                  name="taskDescription"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="taskDate" class="form-label">Due Date</label>
+                <input
+                  #taskDate
+                  type="date"
+                  class="form-control"
+                  id="taskDate"
+                  name="taskDate"
+                  required
+                />
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Add Task</button>
+                <button
+                  type="submit"
+                  class="btn Cancel-button btn-danger"
+                  (click)="navigateToHome()"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

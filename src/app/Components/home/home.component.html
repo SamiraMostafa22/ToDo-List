@@ -1,0 +1,84 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col">
+        <div
+          class="card"
+          style="border-radius: .75rem; background-color: #eff1f2;"
+        >
+          <div class="card-body py-4 px-4 px-md-5">
+            <h1 class="text-center mb-4 text-primary">My To-Do List</h1>
+
+            <!-- Labels for Task List -->
+            <div class="row mb-3">
+              <div class="col"><strong>Task Name</strong></div>
+              <div class="col"><strong>Description</strong></div>
+              <div class="col"><strong>Due Date</strong></div>
+              <div class="col"><strong>Completed</strong></div>
+              <div class="col"><strong>Actions</strong></div>
+            </div>
+
+            <!-- Task List -->
+            <div
+              class="row"
+              *ngFor="let task of taskServices.tasks; let i = index"
+              [class]="getRowColorClass(i)"
+            >
+              <div class="col d-flex align-items-center">
+                {{ task.taskName }}
+              </div>
+              <div class="col d-flex align-items-center">
+                {{ task.taskDescription }}
+              </div>
+              <div class="col d-flex align-items-center">
+                {{ task.taskDate }}
+              </div>
+              <div class="col d-flex align-items-center">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  [checked]="task.isCompleted"
+                />
+              </div>
+              <div class="col d-flex align-items-center">
+                <div class="row">
+                  <div class="col">
+                    <button
+                      class="btn btn-primary btn-sm"
+                      (click)="navigateToEditTask(i)"
+                    >
+                      Edit
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button
+                      class="btn btn-danger btn-sm"
+                      (click)="DeleteTask(i)"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Task Form (positioned to the right) -->
+            <div class="row justify-content-end mb-3">
+              <div class="col-auto">
+                <div class="input-group">
+                  <button
+                    class="add-btn btn btn-primary"
+                    type="button"
+                    (click)="navigateToAddTask()"
+                  >
+                    Add Task
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

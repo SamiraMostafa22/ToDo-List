@@ -1,0 +1,27 @@
+#list1 .form-control {
+  border-color: transparent;
+}
+#list1 .form-control:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+#list1 .select-input.form-control[readonly]:not([disabled]) {
+  background-color: #fbfbfb;
+}
+.even-row {
+  background-color: #f8f9fa; /* Light gray background for even rows */
+}
+
+.odd-row {
+  background-color: #ffffff; /* White background for odd rows */
+}
+.row {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.add-btn {
+  float: right;
+  margin-top: 20px;
+}
